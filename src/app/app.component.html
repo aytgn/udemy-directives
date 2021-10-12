@@ -10,7 +10,7 @@
         [ngIf]="number % 2 !== 0 && !onlyOdd"
       >
         <ul class="list-group">
-          <li class="list-group-item">
+          <li class="list-group-item" better-highlight>
             {{ number }}
           </li>
         </ul>
@@ -21,11 +21,12 @@
         [ngIf]="number % 2 === 0 && onlyOdd"
       >
         <ul class="list-group">
-          <li class="list-group-item">
+          <li class="list-group-item" better-highlight>
             {{ number }}
           </li>
         </ul>
       </ng-template>
+      <div></div>
     </div>
   </div>
 </div>
