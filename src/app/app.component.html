@@ -5,28 +5,34 @@
         Only show odd numbers
       </button>
       <br /><br />
-      <ng-template
-        *ngFor="let number of numbers"
-        [ngIf]="number % 2 !== 0 && !onlyOdd"
-      >
-        <ul class="list-group">
-          <li class="list-group-item" better-highlight>
-            {{ number }}
-          </li>
-        </ul>
-      </ng-template>
-
-      <ng-template
-        *ngFor="let number of numbers"
-        [ngIf]="number % 2 === 0 && onlyOdd"
-      >
-        <ul class="list-group">
-          <li class="list-group-item" better-highlight>
-            {{ number }}
-          </li>
-        </ul>
-      </ng-template>
-      <div></div>
+      <div *ngFor="let number of numbers">
+        <div *ngIf="number % 2 !== 0 && !onlyOdd">
+          <ul class="list-group">
+            <li class="list-group-item" [better-highlight]="'purple'">
+              {{ number + " ilk div" }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div *ngFor="let number of numbers">
+        <div *appUnless="false">
+          <div *ngIf="number % 2 === 0 && onlyOdd">
+            <div>
+              <ul class="list-group">
+                <li class="list-group-item" [better-highlight]="'purple'">
+                  {{ number + " ikinci div " }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">value is 5</p>
+        <p *ngSwitchCase="10">value is 10</p>
+        <p *ngSwitchCase="15">value is 15</p>
+        <p *ngSwitchDefault>value is Default</p>
+      </div>
     </div>
   </div>
 </div>
